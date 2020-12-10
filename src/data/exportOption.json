@@ -1,0 +1,18 @@
+[
+    {
+        "file": "regular-template.docx",
+        "name": "楷書"
+    },
+    {
+        "file": "clerical-template.docx",
+        "name": "隸書"
+    },
+    {
+        "file": "semi-cursive-template.docx",
+        "name": "行書"
+    },
+    {
+        "file": "seal-character-template.docx",
+        "name": "篆體"
+    }
+]
