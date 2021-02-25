@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'vue-select/dist/vue-select.css';
 
 import books from './data/books.json';
+import './registerServiceWorker'
 
 
 
