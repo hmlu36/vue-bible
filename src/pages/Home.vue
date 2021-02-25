@@ -1,19 +1,19 @@
 <template>
   <div class="home">
     <div class="row">
-      <div class="col-2">
-        <v-select :options="$books" label="name" v-model="selectedBook" @input="bookChange" placeholder="書卷" />
+      <div class="col-md-2 col-sm-4">
+        <v-select :options="$books" label="name" v-model="selectedBook" @input="bookChange" placeholder="書" />
       </div>
-      <div class="col-2">
+      <div class="col-md-2 col-sm-4">
         <v-select :options="chapters" v-model="selectedChapter" @input="chapterChange" placeholder="章" />
       </div>
 
-      <div class="col-2">
+      <div class="col-md-2 col-sm-4 d-none d-md-block">
         <v-select class="style-chooser" v-model="selectedExportOption" :options="exportOptions" :reduce="(exportOption) => exportOption.file" label="name" placeholder="匯出字體"></v-select>
       </div>
-      <button type="button" class="btn btn-primary col-1" @click="exportFile">匯出</button>
+      <button type="button" class="btn btn-primary col-1 d-none d-md-block" @click="exportFile">匯出</button>
     </div>
-    <Display ref="Display" />
+    <Display ref="Display" source="home"/>
   </div>
 </template>
 

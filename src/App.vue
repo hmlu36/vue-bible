@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" >
     <div class="bg-info text-white">
       <h5>讀經小幫手</h5>
     </div>

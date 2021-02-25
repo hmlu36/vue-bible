@@ -1,6 +1,6 @@
 <template>
   <div class="display">
-    <div class="form-group row category-heading">
+    <div class="form-group row d-none d-md-flex">
       <div class="col-1 text-right">
         <h4>節</h4>
       </div>
@@ -8,7 +8,7 @@
         <h4>內容</h4>
       </div>
     </div>
-    <div class="form-group row verse-content" v-if="matchVerse != null && matchVerse.length > 0">
+    <div class="form-group row verse-content d-none d-md-flex" v-if="matchVerse != null && matchVerse.length > 0">
       <div class="col-1 text-right" v-bind:style="{ fontSize: (selectedFontSize || 14) + 'px' }">
         <div v-for="entry in matchVerse" :key="entry.verse">
           {{ entry.verse }}
@@ -19,6 +19,15 @@
         <div v-for="entry in matchVerse" :key="entry.verse" v-html="entry.content">
           <br />
         </div>
+      </div>
+    </div>
+    <div class="form-group row verse-content d-block d-sm-none">
+      <div class="col-12">
+        <template v-for="entry in matchVerse">
+          <template v-if="source == 'query'">{{ entry.verse }}</template>
+          <template v-else>{{ matchVerse.indexOf(entry) + 1 }}</template>
+          {{ entry.content }}
+        </template>
       </div>
     </div>
   </div>
@@ -38,6 +47,10 @@ export default {
       type: Number,
       default: 16,
       required: false,
+    },
+    source: {
+      type: String,
+      required: true,
     },
   },
   data() {
@@ -146,6 +159,9 @@ export default {
         saveAs(out, now.toISOString().slice(0, 10) + '.docx');
       });
     },
+  },
+  mounted() {
+    console.log(this.source);
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="query">
     <div class="row">
-      <div class="col-2">
+      <div class="col-md-2 col-sm-4">
         <v-select
           :options="$books"
           label="name"
@@ -10,7 +10,7 @@
           placeholder="開始"
         />
       </div>
-      <div class="col-2">
+      <div class="col-md-2 col-sm-4">
         <v-select
           :options="$books"
           label="name"
@@ -19,12 +19,12 @@
           placeholder="結束"
         />
       </div>
-      <div class="col-2">
+      <div class="col-md-2 col-sm-4">
         <input v-model="queryField" class="form-control" placeholder="關鍵字" />
       </div>
-      <button type="button" class="btn btn-primary col-1" @click="query">查詢</button>
+      <button type="button" class="btn btn-primary col-3" @click="query">查詢</button>
     </div>
-    <Display ref="Display"/>
+    <Display ref="Display" source="query"/>
   </div>
 </template>
 <script>

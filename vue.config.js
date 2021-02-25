@@ -1,7 +1,7 @@
 // vue.config.js
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-bible/' : '/', //發佈對應路徑
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-bible' : '/', //發佈對應路徑
   chainWebpack: config => {
     config
       .plugin('html')
